@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirect...</title>
+    <script>
+      (function () {
+        const path = window.location.pathname;
+        // Evita redirect se sei già nella sottocartella
+        if (!path.startsWith("/gabrieljones/")) {
+          const newPath = "/gabrieljones" + path;
+          const newUrl =
+            window.location.origin +
+            newPath +
+            window.location.search +
+            window.location.hash;
+          window.location.replace(newUrl);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Reindirizzamento in corso... Se non succede nulla, <a href="/gabrieljones/">clicca qui</a>.</p>
+  </body>
+</html>
